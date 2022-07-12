@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <h1><span class="choiceOne">choiceOne</span> vs <span class="choiceTwo">choiceTwo</span> vs <span
+            class="choiceThree">choiceThree</span></h1>
+    <!--this card contains the rules of the game, the card is collapsible by clicking the header  -->
+    <div class="card">
+        <div id="rulesHeader" class="header">Rules</div>
+        <div id="rules" class="content">
+            <p>This is a rock scissor paper type game against a random computer</p>
+            <ul>
+                <li><span class="choiceOne">choiceOne</span> beats <span class="choiceTwo">choiceTwo</span></li>
+                <li><span class="choiceTwo">choiceTwo</span> beats <span class="choiceThree">choiceThree</span></li>
+                <li><span class="choiceThree">choiceThree</span> beats <span class="choiceOne">choiceOne</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div id="playHeader" class="header">Play</div>
+        <div id="play" class="content">
+            <i>Click on a choice to begin the game.</i>
+            <div id="buttonBar">
+                <button class="game btn1"><span class="choiceOne">choiceOne</span></button>
+                <button class="game btn2"><span class="choiceTwo">choiceTwo</span></button>
+                <button class="game btn3"><span class="choiceThree">choiceThree</span></button>
+            </div>
+            <h3>Your Score: <span id='totalScore'>0</span></h3>
+            <div id="gameOutcome">
+            </div>
+            <button class="game btn4">Clear scores</button></h2>
+        </div>
+    </div>
+    <footer>
+        <p>Patrick Cheung - created using codepen.io - background image credit:
+            Brandi Redd unsplashed.com</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
