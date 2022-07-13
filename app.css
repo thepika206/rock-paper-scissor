@@ -10,7 +10,13 @@ h1 {
     color: black;
 }
 
-.card {
+p {
+    margin: 5px 5px;
+}
+
+
+/* page contains cards with header and content sections */
+div.card {
     margin-top: 0px;
     margin-bottom: 10px;
     width: 90%;
@@ -21,8 +27,7 @@ h1 {
     border-bottom: 2px solid black;
 }
 
-/*need to make this clickable card header the same width of the div with class ".content" */
-div.header {
+div.headerBtn {
     display: block;
     max-width: 800px;
     /*   margin-top: 10px; */
@@ -35,7 +40,11 @@ div.header {
     padding: 5px 0;
 }
 
-.content {
+div.headerBtn:hover {
+    cursor: row-resize;
+}
+
+div.content {
     background-color: rgba(226, 227, 222, .99);
 
     /*   position: relative;
@@ -43,24 +52,8 @@ div.header {
     padding: 10px 15px;
 }
 
-.collapsed {
+div.collapsed {
     display: none;
-}
-
-p {
-    margin: 5px 5px;
-}
-
-#gameOutcome {
-    /*   border: 1px solid black; */
-    min-height: 100px;
-    max-width: 900px;
-    margin-top: 20px;
-    /*   padding: 10px; */
-}
-
-article {
-    margin: 10px;
 }
 
 #buttonBar {
@@ -69,7 +62,7 @@ article {
 
 }
 
-button.game {
+button.gameBtn {
     /*   border: none; */
     font-weight: 400;
     border-radius: 5%;
@@ -82,7 +75,7 @@ button.game {
     color: white;
 }
 
-button:hover {
+button.gameBtn:hover {
     border-left: 3px solid rgb(75, 75, 75);
     border-bottom: 4px solid rgb(75, 75, 75);
     margin-bottom: -3px;
@@ -94,12 +87,28 @@ button:hover {
     /*   position: absolute;
     right: 100px; */
     background-color: red;
+    color: white;
     margin-left: 5px;
     padding: 2px 3px;
     /*   width: 15%; */
 }
 
-.scoreboard {
+
+#gameOutcome {
+    /*   border: 1px solid black; */
+    min-height: 100px;
+    max-width: 900px;
+    margin-top: 20px;
+    /*   padding: 10px; */
+}
+
+//scoreboard is created and added dynamically once play starts and placed in the gameOutcome div
+div.scoreboard {
     min-height: 30px;
     /*   border:1px solid black; */
+}
+
+//individual scores are posted dynmically inside the scoreboard
+article {
+    margin: 10px;
 }
