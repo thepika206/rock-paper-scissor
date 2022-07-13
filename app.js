@@ -32,23 +32,23 @@ let myGame = {
 createScoreboard();
 
 //Event listeners one the 3 game choice buttons and clear button
-document.querySelector('.btn1').onclick = () => {
+document.querySelector('#btn1').onclick = () => {
     newGame();
     myGame.playerChoice = 0;
     gameOutcome();
 };
-document.querySelector('.btn2').onclick = () => {
+document.querySelector('#btn2').onclick = () => {
     newGame();
     myGame.playerChoice = 1;
     gameOutcome();
 };
-document.querySelector('.btn3').onclick = () => {
+document.querySelector('#btn3').onclick = () => {
     newGame();
     myGame.playerChoice = 2;
     gameOutcome();
 };
 
-document.querySelector('.btn4').onclick = () => {
+document.querySelector('#btn4').onclick = () => {
     clearHistory();
     console.log("game reset");
 };
