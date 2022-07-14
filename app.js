@@ -36,25 +36,46 @@ let myStats = {
 
 createScoreboard();
 
-//Event listeners on the 3 game choice buttons that set the player choice and proceed to the game outcome function
 
-document.querySelector('#btn1').addEventListener('click', function pickChoiceOne() {
+//functions to set your choice
+function pickChoiceOne() {
     resetChoices();
     myGame.playerChoice = 0;
     gameOutcome();
-})
-document.querySelector('#btn2').addEventListener('click', function pickChoiceTwo() {
+}
+function pickChoiceTwo() {
     resetChoices();
     myGame.playerChoice = 1;
     gameOutcome();
-})
-document.querySelector('#btn3').addEventListener('click', function pickChoiceThree() {
+}
+function pickChoiceThree() {
     resetChoices();
     myGame.playerChoice = 2;
     gameOutcome();
+}
+//Event listeners on the 3 game choice buttons that set the player choice and proceed to the game outcome function
+
+document.querySelector('#btn1').addEventListener('click', pickChoiceOne);
+document.querySelector('#btn2').addEventListener('click', pickChoiceTwo);
+document.querySelector('#btn3').addEventListener('click', pickChoiceThree);
+//Event listener on the Clear History and Start Over button
+document.querySelector('#btn4').addEventListener('click', clearHistory);
+
+//keyboard eventlisteners
+window.addEventListener('keydown', function (e) {
+    console.log(e.key)
+    switch (e.key) {
+        case '1': pickChoiceOne()
+            break;
+        case '2': pickChoiceTwo()
+            break;
+        case '3': pickChoiceThree()
+            break;
+    }
 })
 
-document.querySelector('#btn4').addEventListener('click', clearHistory);
+
+
 
 // refactored this with event listeners
 // document.querySelector('#btn1').onclick = () => {
@@ -186,7 +207,8 @@ playHeaderBtn = document.querySelector('#playHeader');
 playHeaderBtn.addEventListener('click', collapsePlay);
 
 function collapseRules() {
-    document.querySelector('#rules').classList.toggle('collapsed')
+    document.querySelector('#rules').classList.toggle('collapsed');
 }
 ruleHeaderBtn = document.querySelector('#rulesHeader');
 ruleHeaderBtn.addEventListener('click', collapseRules);
+
