@@ -4,6 +4,7 @@ body {
     background-size: cover;
     color: rgb(75, 75, 75);
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
 }
 
 h1 {
