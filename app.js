@@ -22,15 +22,20 @@ for (let el of choiceThree) {
 // myGame Object keeps track of the player and computer choices and winner of the each game to display the game outcome.  
 let myGame = {
     id: 0,
-    score: 0,
+    // score: 0, //this was moved into the new variable myStats.wins and is no longer used
     computerChoice: null,
     playerChoice: null,
     winner: null,
     // playerName: null,
 };
 
+//document game results besides placing it on screen
+let gameHistory = [];
+
+//track player's stats
 let myStats = {
     wins: 0,
+
 
 }
 
@@ -131,8 +136,18 @@ function gameOutcome() {
     //Game Play final step: calculate the winner
     myGame.winner = determineWinner();
     console.log(myGame);
+    //store the game result
+    const myGameResult = {
+        id: myGame.id,
+        computerChoice: myGame.computerChoice,
+        playerChoice: myGame.playerChoice,
+        winner: myGame.winner,
+    };
+    gameHistory.push(myGameResult);
+    console.log(gameHistory);
     postScore();
     updateTotalWins();
+    checkAchievements();
 }
 
 //function that displays who picked what, who won, and updates the total score.
@@ -212,3 +227,15 @@ function collapseRules() {
 ruleHeaderBtn = document.querySelector('#rulesHeader');
 ruleHeaderBtn.addEventListener('click', collapseRules);
 
+//achievements
+function checkAchievements() {
+    if (myStats.wins === 1 && myStats.achievementFirstWin !== true) {
+        alert('Achievement: First Victory')
+        myStats.achievementFirstWin = true;
+    }
+    if (myStats.wins === 5 && myStats.achievementFiveWins !== true) {
+        alert('Achievement: Five Victories')
+        myStats.achievementFiveWins = true;
+    }
+
+}
