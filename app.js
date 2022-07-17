@@ -65,7 +65,7 @@ document.querySelector('#btn1').addEventListener('click', pickChoiceOne);
 document.querySelector('#btn2').addEventListener('click', pickChoiceTwo);
 document.querySelector('#btn3').addEventListener('click', pickChoiceThree);
 //Event listener on the Clear History and Start Over button
-document.querySelector('#btn4').addEventListener('click', clearHistory);
+document.querySelector('#btn4').addEventListener('click', resetGame);
 
 //keyboard eventlisteners
 window.addEventListener('keydown', function (e) {
@@ -79,35 +79,6 @@ window.addEventListener('keydown', function (e) {
             break;
     }
 })
-
-
-
-
-// refactored this with event listeners
-// document.querySelector('#btn1').onclick = () => {
-//     resetChoices();
-//     myGame.playerChoice = 0;
-//     gameOutcome();
-// };
-// document.querySelector('#btn2').onclick = () => {
-//     resetChoices();
-//     myGame.playerChoice = 1;
-//     gameOutcome();
-// };
-// document.querySelector('#btn3').onclick = () => {
-//     resetChoices();
-//     myGame.playerChoice = 2;
-//     gameOutcome();
-// };
-
-//clear history button
-// document.querySelector('#btn4').onclick = () => {
-//     clearHistory();
-//     console.log("game reset");
-// };
-
-
-
 
 //function to reset everyone's move and the winner in myGame between rounds of play.
 function resetChoices() {
@@ -167,16 +138,11 @@ function updateTotalWins() {
 }
 
 //function to clear the posted scores and restart the game id count
-function clearHistory() {
+function resetGame() {
     const scoreboard = document.querySelector('.scoreboard');
     scoreboard.remove();
     createScoreboard();
-
-    // while(myGame.id !==0){
-    // const scoreboard = document.querySelector('article');
-    // scoreboard.remove();
-    // myGame.id--;
-    // }
+    location.reload();
 };
 
 //function for the random computer's move
@@ -237,8 +203,6 @@ function collapseAchievements() {
 }
 ruleHeaderBtn = document.querySelector('#achievementsHeader');
 ruleHeaderBtn.addEventListener('click', collapseAchievements);
-
-
 
 //achievements
 function checkAchievements() {
