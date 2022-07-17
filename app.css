@@ -1,5 +1,5 @@
 body {
-    margin-left: 20px;
+    margin: 10px auto;
     background: url('https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=808&q=80');
     background-size: cover;
     color: rgb(75, 75, 75);
@@ -9,6 +9,8 @@ body {
 
 h1 {
     color: black;
+    margin: 5px auto;
+    text-align: center;
 }
 
 p {
@@ -18,10 +20,11 @@ p {
 
 /* page contains cards with header and content sections */
 div.card {
+    margin: 0 auto;
     margin-top: 0px;
     margin-bottom: 10px;
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 500px;
     border-top: 1px solid rgb(170, 170, 170);
     border-right: 1px solid rgb(170, 170, 170);
     border-left: 1px solid black;
@@ -30,15 +33,15 @@ div.card {
 
 div.headerBtn {
     display: block;
-    max-width: 800px;
+    /* max-width: 800px; */
     /*   margin-top: 10px; */
     margin-right: 1px;
     margin-bottom: -1px;
     font-size: 20px;
     font-weight: 600;
     background-color: white;
-    text-align: center;
-    padding: 5px 0;
+    text-align: left;
+    padding: 5px 0 5px 20px;
 }
 
 div.headerBtn:hover {
@@ -70,7 +73,7 @@ button.gameBtn {
     padding: 5px;
     margin-right: 10px;
     margin-top: 5px;
-    width: 25%;
+    width: 29%;
     max-width: 100px;
     background-color: rgba(71, 71, 71, .99);
     color: white;
