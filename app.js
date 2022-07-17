@@ -139,10 +139,12 @@ function updateTotalWins() {
 
 //function to clear the posted scores and restart the game id count
 function resetGame() {
+    let winner = document.querySelector('#gameWinner')
+    winner.innerText = 'Game not started';
     const scoreboard = document.querySelector('.scoreboard');
     scoreboard.remove();
     createScoreboard();
-    location.reload();
+    clearAchievements();
 };
 
 //function for the random computer's move
@@ -207,16 +209,23 @@ ruleHeaderBtn.addEventListener('click', collapseAchievements);
 //achievements
 function checkAchievements() {
     if (myStats.wins === 1 && myStats.achievementFirstWin !== true) {
-        alert('Game Achievement: First Victory')
-        const ach = document.querySelector('#ach1')
-        ach.innerText = "First Win"
+        alert('Game Achievement: First Victory');
+        const ach = document.querySelector('#ach1');
+        ach.innerText = "First Win";
         myStats.achievementFirstWin = true;
     }
     if (myStats.wins === 5 && myStats.achievementFiveWins !== true) {
-        alert('Gane Achievement: Five Victories')
-        const ach = document.querySelector('#ach2')
-        ach.innerText = "Five Victories"
+        alert('Gane Achievement: Five Victories');
+        const ach = document.querySelector('#ach2');
+        ach.innerText = "Five Victories";
         myStats.achievementFiveWins = true;
     }
 
+}
+
+function clearAchievements() {
+    const ach1 = document.querySelector('#ach1');
+    ach1.innerText = "Achievement 1 - locked";
+    const ach2 = document.querySelector('#ach2');
+    ach2.innerText = "Achievement 2 - locked";
 }
