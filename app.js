@@ -1,3 +1,4 @@
+
 //these are the choices of the game.   0 = Lapis,  1 = Scapella, 2 = Papyrus
 let choices = ["Lapis", "Scapella", "Papyrus"];
 
@@ -153,9 +154,11 @@ function gameOutcome() {
 //function that displays who picked what, who won, and updates the total score.
 function postScore() {
     let score = document.createElement('article');
-    score.innerText = `Game ${myGame.id} - ${myGame.winner} Won! - the computer chose ${choices[myGame.computerChoice - 1]}, you chose ${choices[myGame.playerChoice - 1]}.`;
+    score.innerText = `Game ${myGame.id} - ${myGame.winner} Won - the computer chose ${choices[myGame.computerChoice - 1]}, you chose ${choices[myGame.playerChoice - 1]}.`;
     const scoreboard = document.querySelector('.scoreboard');
     scoreboard.prepend(score);
+    let winner = document.querySelector('#gameWinner')
+    winner.innerText = myGame.winner;
 }
 
 function updateTotalWins() {
@@ -221,20 +224,34 @@ function collapsePlay() {
 playHeaderBtn = document.querySelector('#playHeader');
 playHeaderBtn.addEventListener('click', collapsePlay);
 
+collapseRules() //hide by default
 function collapseRules() {
     document.querySelector('#rules').classList.toggle('collapsed');
 }
 ruleHeaderBtn = document.querySelector('#rulesHeader');
 ruleHeaderBtn.addEventListener('click', collapseRules);
 
+collapseAchievements() //hide by default
+function collapseAchievements() {
+    document.querySelector('#achievements').classList.toggle('collapsed');
+}
+ruleHeaderBtn = document.querySelector('#achievementsHeader');
+ruleHeaderBtn.addEventListener('click', collapseAchievements);
+
+
+
 //achievements
 function checkAchievements() {
     if (myStats.wins === 1 && myStats.achievementFirstWin !== true) {
-        alert('Achievement: First Victory')
+        alert('Game Achievement: First Victory')
+        const ach = document.querySelector('#ach1')
+        ach.innerText = "First Win"
         myStats.achievementFirstWin = true;
     }
     if (myStats.wins === 5 && myStats.achievementFiveWins !== true) {
-        alert('Achievement: Five Victories')
+        alert('Gane Achievement: Five Victories')
+        const ach = document.querySelector('#ach2')
+        ach.innerText = "Five Victories"
         myStats.achievementFiveWins = true;
     }
 

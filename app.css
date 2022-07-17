@@ -17,12 +17,19 @@ p {
     margin: 5px 5px;
 }
 
+main {
+    background-color: rgba(226, 227, 222, .75);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 
 /* page contains cards with header and content sections */
 div.card {
     margin: 0 auto;
     margin-top: 0px;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     width: 100%;
     max-width: 500px;
     border-top: 1px solid rgb(170, 170, 170);
@@ -45,7 +52,8 @@ div.headerBtn {
 }
 
 div.headerBtn:hover {
-    cursor: row-resize;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 div.content {
@@ -115,4 +123,10 @@ div.scoreboard {
 //individual scores are posted dynmically inside the scoreboard
 article {
     margin: 10px;
+}
+
+
+//locked game achievements says locked but are also grey 
+#ach1 {
+    color: blue;
 }
