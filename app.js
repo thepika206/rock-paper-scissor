@@ -36,8 +36,11 @@ let gameHistory = [];
 //track player's stats
 let myStats = {
     wins: 0,
-
-
+}
+function clearMyStats() {
+    myStats = {
+        wins: 0,
+    }
 }
 
 createScoreboard();
@@ -144,7 +147,9 @@ function resetGame() {
     const scoreboard = document.querySelector('.scoreboard');
     scoreboard.remove();
     createScoreboard();
+    resetChoices();
     clearAchievements();
+    clearMyStats();
 };
 
 //function for the random computer's move
