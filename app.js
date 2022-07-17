@@ -45,17 +45,17 @@ createScoreboard();
 //functions to set your choice
 function pickChoiceOne() {
     resetChoices();
-    myGame.playerChoice = 0;
+    myGame.playerChoice = 1;
     gameOutcome();
 }
 function pickChoiceTwo() {
     resetChoices();
-    myGame.playerChoice = 1;
+    myGame.playerChoice = 2;
     gameOutcome();
 }
 function pickChoiceThree() {
     resetChoices();
-    myGame.playerChoice = 2;
+    myGame.playerChoice = 3;
     gameOutcome();
 }
 //Event listeners on the 3 game choice buttons that set the player choice and proceed to the game outcome function
@@ -153,7 +153,7 @@ function gameOutcome() {
 //function that displays who picked what, who won, and updates the total score.
 function postScore() {
     let score = document.createElement('article');
-    score.innerText = `Game ${myGame.id} - ${myGame.winner} Won! - You chose ${choices[myGame.playerChoice]}, the computer chose ${choices[myGame.computerChoice]}.`;
+    score.innerText = `Game ${myGame.id} - ${myGame.winner} Won! - the computer chose ${choices[myGame.computerChoice - 1]}, you chose ${choices[myGame.playerChoice - 1]}.`;
     const scoreboard = document.querySelector('.scoreboard');
     scoreboard.prepend(score);
 }
@@ -178,34 +178,34 @@ function clearHistory() {
 
 //function for the random computer's move
 function randomChooser() {
-    return Math.floor(Math.random() * 3);
+    return Math.floor(Math.random() * 3 + 1);
 };
 
 //function with the game logic to determine who won.  
-//Game Rules: 0 beats 1, 1 beats 2, 2 beats 0 
+//Game Rules: 1 beats 2, 2 beats 3, 3 beats 1 
 function determineWinner() {
     //computer ahd player choice are the same
     if (myGame.computerChoice === myGame.playerChoice) {
         return 'Nobody';
     }
-    //computer chooses 0
-    else if (myGame.computerChoice === 0 && myGame.playerChoice === 1) {
-        return 'The Computer';
-    } else if (myGame.computerChoice === 0 && myGame.playerChoice === 2) {
-        myStats.wins++;
-        return 'You';
-    }
     //computer chooses 1
     else if (myGame.computerChoice === 1 && myGame.playerChoice === 2) {
         return 'The Computer';
-    } else if (myGame.computerChoice === 1 && myGame.playerChoice === 0) {
+    } else if (myGame.computerChoice === 1 && myGame.playerChoice === 3) {
         myStats.wins++;
         return 'You';
     }
     //computer chooses 2
-    else if (myGame.computerChoice === 2 && myGame.playerChoice === 0) {
+    else if (myGame.computerChoice === 2 && myGame.playerChoice === 3) {
         return 'The Computer';
     } else if (myGame.computerChoice === 2 && myGame.playerChoice === 1) {
+        myStats.wins++;
+        return 'You';
+    }
+    //computer chooses 3
+    else if (myGame.computerChoice === 3 && myGame.playerChoice === 1) {
+        return 'The Computer';
+    } else if (myGame.computerChoice === 3 && myGame.playerChoice === 2) {
         myStats.wins++;
         return 'You';
     }
