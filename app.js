@@ -218,6 +218,7 @@ function checkAchievements() {
         const ach = document.querySelector('#ach1');
         ach.innerText = "First Win";
         myStats.achievementFirstWin = true;
+        collapseAchievements();
     }
     if (myStats.wins === 5 && myStats.achievementFiveWins !== true) {
         alert('Gane Achievement: Five Victories');
