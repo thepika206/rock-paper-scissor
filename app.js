@@ -237,9 +237,9 @@ function checkAchievements() {
         myStats.achievementFiveWins = true;
     }
     if (myStats.choseOne === 10) {
-        alert('Gane Achievement: Rocky X');
+        alert('Game Achievement: I only need one choice');
         const ach = document.querySelector('#ach3');
-        ach.innerText = "Chose Lapis 10 times";
+        ach.innerText = "Choice# 1 - picked 10 times";
         myStats.achievementRockyX = true;
     }
 
