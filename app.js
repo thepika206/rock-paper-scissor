@@ -201,26 +201,17 @@ function determineWinner() {
     else { console.log('Cannot determine winner') }
 };
 
-
-//collapsible cards
-function collapsePlay() {
-    document.querySelector('#play').classList.toggle('collapsed');
-    document.querySelector('#playExpandInd').classList.toggle('expanded');
+//collapsible cards v4.1
+let headers = document.querySelectorAll(".headerBtn");
+for (header of headers) {
+    header.addEventListener("click", function () {
+        console.log("clicked");
+        let cardContent = this.nextElementSibling;
+        cardContent.classList.toggle("collapsed");
+        let cardArrow = this.querySelector(".cardIndicator");
+        cardArrow.classList.toggle("collapsed");
+    });
 }
-playHeaderBtn = document.querySelector('#playHeader');
-playHeaderBtn.addEventListener('click', collapsePlay);
-
-function collapseRules() {
-    document.querySelector('#rules').classList.toggle('collapsed');
-}
-ruleHeaderBtn = document.querySelector('#rulesHeader');
-ruleHeaderBtn.addEventListener('click', collapseRules);
-
-function collapseAchievements() {
-    document.querySelector('#achievements').classList.toggle('collapsed');
-}
-ruleHeaderBtn = document.querySelector('#achievementsHeader');
-ruleHeaderBtn.addEventListener('click', collapseAchievements);
 
 //achievements
 function checkAchievements() {

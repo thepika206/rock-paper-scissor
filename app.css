@@ -68,6 +68,8 @@ div.collapsed {
     display: none;
 }
 
+
+
 #buttonBar {
     margin: 0 auto;
 
@@ -168,4 +170,14 @@ article {
         margin-left: 5px;
         padding: 10px;
     }
+}
+
+img.cardIndicator {
+    width: 20px;
+    transform: rotate(-90deg);
+    padding: 0px 10px;
+}
+
+img.collapsed {
+    transform: rotate(90deg);
 }
