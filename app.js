@@ -192,19 +192,18 @@ function determineWinner() {
 
 //collapsible cards
 function collapsePlay() {
-    document.querySelector('#play').classList.toggle('collapsed')
+    document.querySelector('#play').classList.toggle('collapsed');
+    document.querySelector('#playExpandInd').classList.toggle('expanded');
 }
 playHeaderBtn = document.querySelector('#playHeader');
 playHeaderBtn.addEventListener('click', collapsePlay);
 
-collapseRules() //hide by default
 function collapseRules() {
     document.querySelector('#rules').classList.toggle('collapsed');
 }
 ruleHeaderBtn = document.querySelector('#rulesHeader');
 ruleHeaderBtn.addEventListener('click', collapseRules);
 
-collapseAchievements() //hide by default
 function collapseAchievements() {
     document.querySelector('#achievements').classList.toggle('collapsed');
 }
@@ -218,7 +217,6 @@ function checkAchievements() {
         const ach = document.querySelector('#ach1');
         ach.innerText = "First Win";
         myStats.achievementFirstWin = true;
-        collapseAchievements();
     }
     if (myStats.wins === 5 && myStats.achievementFiveWins !== true) {
         alert('Gane Achievement: Five Victories');
