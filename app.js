@@ -36,10 +36,16 @@ let gameHistory = [];
 //track player's stats
 let myStats = {
     wins: 0,
+    choseOne: 0,
+    choseTwo: 0,
+    choseThree: 0
 }
 function clearMyStats() {
     myStats = {
         wins: 0,
+        choseOne: 0,
+        choseTwo: 0,
+        choseThree: 0
     }
 }
 
@@ -50,16 +56,22 @@ createScoreboard();
 function pickChoiceOne() {
     resetChoices();
     myGame.playerChoice = 1;
+    myStats.choseOne++;
+    console.log(myStats);
     gameOutcome();
 }
 function pickChoiceTwo() {
     resetChoices();
     myGame.playerChoice = 2;
+    myStats.choseTwo++;
+    console.log(myStats);
     gameOutcome();
 }
 function pickChoiceThree() {
     resetChoices();
     myGame.playerChoice = 3;
+    myStats.choseThree++;
+    console.log(myStats);
     gameOutcome();
 }
 //Event listeners on the 3 game choice buttons that set the player choice and proceed to the game outcome function
@@ -223,6 +235,12 @@ function checkAchievements() {
         const ach = document.querySelector('#ach2');
         ach.innerText = "Five Victories";
         myStats.achievementFiveWins = true;
+    }
+    if (myStats.choseOne === 10) {
+        alert('Gane Achievement: Rocky X');
+        const ach = document.querySelector('#ach3');
+        ach.innerText = "Chose Lapis 10 times";
+        myStats.achievementRockyX = true;
     }
 
 }
