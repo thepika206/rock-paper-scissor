@@ -1,9 +1,30 @@
-
-//these are the choices of the game.   0 = Lapis,  1 = Scapella, 2 = Papyrus
+//* -----------------------------Constants-------------------------------------
 let choices = ["Lapis", "Scapella", "Papyrus"];
 
+
+//* -----------------------------Variables (state)------------------------------
+let myGame = {
+    id: 0,
+    // score: 0, //this was moved into the new variable myStats.wins and is no longer used
+    computerChoice: null,
+    playerChoice: null,
+    winner: null,
+    // playerName: null,
+};
+//document game results besides placing it on screen
+let gameHistory = [];
+
+//track player's stats
+let myStats = {
+    wins: 0,
+    choseOne: 0,
+    choseTwo: 0,
+    choseThree: 0
+}
+
+
+//* -----------------------------Cached Element References---------------------
 //the text for the choices are used all over the html doc, so this selects all by class and sets them dynamically.  It would be easy to relabel the choices.
-//(rock)
 const choiceOne = document.querySelectorAll('.choiceOne');
 for (let el of choiceOne) {
     el.innerText = choices[0];
@@ -19,27 +40,44 @@ for (let el of choiceThree) {
     el.innerText = choices[2];
 }
 
-
-// myGame Object keeps track of the player and computer choices and winner of the each game to display the game outcome.  
-let myGame = {
-    id: 0,
-    // score: 0, //this was moved into the new variable myStats.wins and is no longer used
-    computerChoice: null,
-    playerChoice: null,
-    winner: null,
-    // playerName: null,
-};
-
-//document game results besides placing it on screen
-let gameHistory = [];
-
-//track player's stats
-let myStats = {
-    wins: 0,
-    choseOne: 0,
-    choseTwo: 0,
-    choseThree: 0
+let headers = document.querySelectorAll(".headerBtn");
+for (header of headers) {
+    header.addEventListener("click", function () {
+        console.log("clicked");
+        let cardContent = this.nextElementSibling;
+        cardContent.classList.toggle("collapsed");
+        let cardArrow = this.querySelector(".cardIndicator");
+        cardArrow.classList.toggle("collapsed");
+    });
 }
+
+
+
+//* -----------------------------Event Listeners-------------------------------
+
+document.querySelector('#btn1').addEventListener('click', pickChoiceOne);
+document.querySelector('#btn2').addEventListener('click', pickChoiceTwo);
+document.querySelector('#btn3').addEventListener('click', pickChoiceThree);
+//Event listener on the Clear History and Start Over button
+document.querySelector('#btn4').addEventListener('click', resetGame);
+
+//keyboard eventlisteners
+window.addEventListener('keydown', function (e) {
+    console.log(e.key)
+    switch (e.key) {
+        case '1': pickChoiceOne()
+            break;
+        case '2': pickChoiceTwo()
+            break;
+        case '3': pickChoiceThree()
+            break;
+    }
+})
+
+//* -----------------------------Functions-------------------------------------
+createScoreboard();
+
+
 function clearMyStats() {
     myStats = {
         wins: 0,
@@ -48,9 +86,6 @@ function clearMyStats() {
         choseThree: 0
     }
 }
-
-createScoreboard();
-
 
 //functions to set your choice
 function pickChoiceOne() {
@@ -74,26 +109,8 @@ function pickChoiceThree() {
     console.log(myStats);
     gameOutcome();
 }
-//Event listeners on the 3 game choice buttons that set the player choice and proceed to the game outcome function
 
-document.querySelector('#btn1').addEventListener('click', pickChoiceOne);
-document.querySelector('#btn2').addEventListener('click', pickChoiceTwo);
-document.querySelector('#btn3').addEventListener('click', pickChoiceThree);
-//Event listener on the Clear History and Start Over button
-document.querySelector('#btn4').addEventListener('click', resetGame);
 
-//keyboard eventlisteners
-window.addEventListener('keydown', function (e) {
-    console.log(e.key)
-    switch (e.key) {
-        case '1': pickChoiceOne()
-            break;
-        case '2': pickChoiceTwo()
-            break;
-        case '3': pickChoiceThree()
-            break;
-    }
-})
 
 //function to reset everyone's move and the winner in myGame between rounds of play.
 function resetChoices() {
@@ -200,18 +217,6 @@ function determineWinner() {
     // error log for bad input 
     else { console.log('Cannot determine winner') }
 };
-
-//collapsible cards v4.1
-let headers = document.querySelectorAll(".headerBtn");
-for (header of headers) {
-    header.addEventListener("click", function () {
-        console.log("clicked");
-        let cardContent = this.nextElementSibling;
-        cardContent.classList.toggle("collapsed");
-        let cardArrow = this.querySelector(".cardIndicator");
-        cardArrow.classList.toggle("collapsed");
-    });
-}
 
 //achievements
 function checkAchievements() {
