@@ -73,15 +73,16 @@ window.addEventListener('keydown', function (e) {
 //* -----------------------------Functions-------------------------------------
 createScoreboard();
 
-
-function clearMyStats() {
-    myStats = {
-        wins: 0,
-        choseOne: 0,
-        choseTwo: 0,
-        choseThree: 0
-    }
+function createScoreboard() {
+    const scoreboard = document.createElement('div');
+    scoreboard.className = 'scoreboard';
+    const scoreboardLocation = document.querySelector('#gameOutcome');
+    scoreboardLocation.append(scoreboard);
+    myStats.wins = 0;
+    myGame.id = 0;
+    updateTotalWins()
 }
+
 
 //functions to set your choice
 function pickChoiceOne() {
@@ -102,22 +103,13 @@ function pickChoiceThree() {
 
 
 
-function createScoreboard() {
-    const scoreboard = document.createElement('div');
-    scoreboard.className = 'scoreboard';
-    const scoreboardLocation = document.querySelector('#gameOutcome');
-    scoreboardLocation.append(scoreboard);
-    myStats.wins = 0;
-    myGame.id = 0;
-    updateTotalWins()
-}
 
 //function that is the main flow once a player makes a choice
 function gameOutcome() {
     myGame.id++;
     myGame.computerChoice = randomChooser();
     myGame.winner = determineWinner();
-
+    
     //! myGameResult is a temporary holder and is pushed to gameHistory
     const myGameResult = {
         id: myGame.id,
@@ -213,7 +205,7 @@ function checkAchievements() {
         ach.innerText = "Choice# 1 - picked 10 times";
         myStats.achievementRockyX = true;
     }
-
+    
 }
 
 function clearAchievements() {
@@ -221,4 +213,12 @@ function clearAchievements() {
     ach1.innerText = "Achievement 1 - locked";
     const ach2 = document.querySelector('#ach2');
     ach2.innerText = "Achievement 2 - locked";
+}
+function clearMyStats() {
+    myStats = {
+        wins: 0,
+        choseOne: 0,
+        choseTwo: 0,
+        choseThree: 0
+    }
 }
