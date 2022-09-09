@@ -10,63 +10,58 @@
 </head>
 
 <body>
-    <main class="title">
-        <h1><span class="choiceOne">choiceOne</span> vs <span class="choiceTwo">choiceTwo</span> vs <span
-                class="choiceThree">choiceThree</span></h1>
-
-
-        <!--this card contains the rules of the game, the card is collapsible by clicking the header  -->
-        <div class="card">
-            <div id="rulesHeader" class="headerBtn"><img class='cardIndicator'
-                    src="https://cdn-icons-png.flaticon.com/512/120/120893.png" alt="collapse arrow">Rules</div>
-            <div id="rules" class="content">
-                <p>This is a rock scissor paper type game against a random computer</p>
-                <ul>
-                    <li><span class="choiceOne">choiceOne</span> beats <span class="choiceTwo">choiceTwo</span></li>
-                    <li><span class="choiceTwo">choiceTwo</span> beats <span class="choiceThree">choiceThree</span></li>
-                    <li><span class="choiceThree">choiceThree</span> beats <span class="choiceOne">choiceOne</span></li>
-                </ul>
-            </div>
+<main class="title">
+    <h1><span class="choiceOne">choiceOne</span> vs <span class="choiceTwo">choiceTwo</span> vs <span
+    class="choiceThree">choiceThree</span>
+    </h1>
+    <!--this card contains the rules of the game, the card is collapsible by clicking the header  -->
+    <div class="card">
+        <div id="rulesHeader" class="headerBtn"><img class='cardIndicator'
+            src="https://cdn-icons-png.flaticon.com/512/120/120893.png" alt="collapse arrow">Rules
         </div>
-
-        <div class="card">
-            <div id="achievementsHeader" class="headerBtn"><img class='cardIndicator'
-                    src="https://cdn-icons-png.flaticon.com/512/120/120893.png" alt="collapse arrow">Game Achievements
-            </div>
-            <div id="achievements" class="content">
-                <ul>
-                    <li class="locked" id="ach1">Achievement 1 - locked</li>
-                    <li class="locked" id="ach2">Achievement 2 - locked</li>
-                    <li class="locked" id="ach3">Achievement 3 - locked</li>
-
-                </ul>
-            </div>
+        <div id="rules" class="content">
+            <p>This is a rock scissor paper type game against a random computer</p>
+            <ul>
+                <li><span class="choiceOne">choiceOne</span> beats <span class="choiceTwo">choiceTwo</span></li>
+                <li><span class="choiceTwo">choiceTwo</span> beats <span class="choiceThree">choiceThree</span></li>
+                <li><span class="choiceThree">choiceThree</span> beats <span class="choiceOne">choiceOne</span></li>
+            </ul>
         </div>
-
-        <div class="card">
-            <div id="playHeader" class="headerBtn"><img class='cardIndicator'
-                    src="https://cdn-icons-png.flaticon.com/512/120/120893.png" alt="collapse arrow">Play</div>
-            <div id="play" class="content">
-                <i>Click on a choice to begin the game. You may also use the number keys.</i>
-                <div id="buttonBar">
-                    <button class="gameBtn" id="btn1">1)<span class="choiceOne">choiceOne</span></button>
-                    <button class="gameBtn" id="btn2">2)<span class="choiceTwo">choiceTwo</span></button>
-                    <button class="gameBtn" id="btn3">3)<span class="choiceThree">choiceThree</span></button>
-                </div>
-                <h3>Game Winner: <span id='gameWinner'>Game not started</span></h3>
-                <h3>Victory Count: <span id='totalWins'>0</span></h3>
-                <div id="gameOutcome">
-                </div>
-                <button class="gameBtn" id="btn4">Reset Game</button>
-            </div>
-        </div>
-    </main>
-    <div>
-        <p>Patrick Cheung 2022 - background image credit:
-            Brandi Redd unsplashed.com</p>
     </div>
+    <div class="card">
+        <div id="achievementsHeader" class="headerBtn"><img class='cardIndicator'
+            src="https://cdn-icons-png.flaticon.com/512/120/120893.png" alt="collapse arrow">Game Achievements
+        </div>
+        <div id="achievements" class="content">
+            <ul>
+                <li class="locked" id="ach1">Achievement 1 - locked</li>
+                <li class="locked" id="ach2">Achievement 2 - locked</li>
+                <li class="locked" id="ach3">Achievement 3 - locked</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div id="playHeader" class="headerBtn"><img class='cardIndicator'
+            src="https://cdn-icons-png.flaticon.com/512/120/120893.png" alt="collapse arrow">Play</div>
+        <div id="play" class="content">
+            <i>Click on a choice to begin the game. You may also use the number keys.</i>
+            <div id="buttonBar">
+                <button class="gameBtn" id="btn1">1)<span class="choiceOne">choiceOne</span></button>
+                <button class="gameBtn" id="btn2">2)<span class="choiceTwo">choiceTwo</span></button>
+                <button class="gameBtn" id="btn3">3)<span class="choiceThree">choiceThree</span></button>
+            </div>
+            <h3>Game Winner: <span id='gameWinner'>Game not started</span></h3>
+            <h3>Victory Count: <span id='totalWins'>0</span></h3>
+            <div id="gameOutcome"></div>
+            <button class="gameBtn" id="btn4">Reset Game</button>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Patrick Cheung 2022 - background image credit: Brandi Redd unsplashed.com</p>
+</footer>
 
-    <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>
