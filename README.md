@@ -6,6 +6,8 @@
 - I created as pre-course work prior to entering the General Assembly Software Engineering Immersive bootcamp
 - much of my working knowledge of code to this point came from a web development Udemy course: https://www.udemy.com/course/the-web-developer-bootcamp
 
+## Take Aways
+- This project boosted my self-confidence to create not just a minimal game, but to add more features such as game achievements and collaspable cards.
 
 ## Technologies
 - HTML

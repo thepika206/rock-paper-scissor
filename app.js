@@ -1,5 +1,5 @@
 //* -----------------------------Constants-------------------------------------
-let choices = ["Lapis", "Scapella", "Papyrus"];
+let choices = ["Rock", "Scissor", "Paper"];
 
 
 //* -----------------------------Variables (state)------------------------------
