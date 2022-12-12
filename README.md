@@ -1,6 +1,7 @@
 # Rock Paper Scissor Game
 - Patrick Cheung August 2022
 - Play rock paper scissors against the computer random picker
+![game image](https://i.imgur.com/ow7ZxMT.png)  
 
 ## Background
 - I created as pre-course work prior to entering the General Assembly Software Engineering Immersive bootcamp
@@ -15,6 +16,6 @@
 - JavaScript
 
 ## Credits
-- background paper image credit:Brandi Redd unsplashed.com
+- Arrow Icon from [www.flaticon.com](www.flaticon.com)
+- shadow css from [getcssscan.com](https://getcssscan.com/)
 
-![Alt text](./rps-game-image.png?raw=true "game screenshot")
