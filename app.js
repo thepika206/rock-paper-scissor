@@ -191,18 +191,21 @@ function checkAchievements() {
         // alert('Game Achievement: First Victory');
         const ach = document.querySelector('#ach1');
         ach.innerText = "First Win";
+        ach.classList = "unlocked"
         myStats.achievementFirstWin = true;
     }
     if (myStats.wins === 5 && myStats.achievementFiveWins !== true) {
         // alert('Gane Achievement: Five Victories');
         const ach = document.querySelector('#ach2');
         ach.innerText = "Five Victories";
+        ach.classList = "unlocked"
         myStats.achievementFiveWins = true;
     }
     if (myStats.choseOne === 10) {
         // alert('Game Achievement: I only need one choice');
         const ach = document.querySelector('#ach3');
         ach.innerText = "Choice# 1 - picked 10 times";
+        ach.classList = "unlocked"
         myStats.achievementRockyX = true;
     }
     
