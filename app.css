@@ -48,7 +48,7 @@ div.headerBtn {
     font-weight: 600;
     background-color: white;
     text-align: left;
-    padding: 5px 0 5px 20px;
+    padding: 5px 0 5px 0px;
 }
 
 div.headerBtn:hover {
